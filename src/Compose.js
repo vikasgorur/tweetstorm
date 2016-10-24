@@ -10,7 +10,8 @@ export default class Compose extends Component {
   }
 
   render() {
-    return <TextField hintText="Write your tweet"
+    return <TextField autoFocus={true}
+                      hintText="Write your tweet"
                       multiLine={true}
                       rows={4} 
                       style={this.style} />;
