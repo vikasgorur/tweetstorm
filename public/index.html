@@ -26,14 +26,10 @@
     <script type="x-template" id="compose-template">
       <form>
         <h3>Text</h3>
-        Type your text here. Use a line containing only '--' to separate tweets.
-
-        <p />
 
         <textarea class="u-full-width" id="text" autofocus="true"
-                  rows="20"
+                  :placeholder="text"
                   v-model="text" v-on:keyup="handleKeyUp" >
-
         </textarea>
       </form>
     </script>
@@ -43,7 +39,9 @@
         <h3>Tweets</h3>
 
         <div v-for="tweet in tweets">
-          {{ tweet }}
+          <div class="tweet">
+            {{ tweet }}
+          </div>
         </div>
       </div>
     </script>

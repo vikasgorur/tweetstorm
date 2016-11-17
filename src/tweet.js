@@ -1,4 +1,4 @@
-import twitter from 'twitter-text';
+//import twitter from 'twitter-text';
 
 /**
  * Split the text into chunks based on '\n--\n'

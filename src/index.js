@@ -31,7 +31,7 @@ Vue.component('compose', {
 
   data: function() {
     return {
-      text: ''
+      text: this.$store.text
     }
   },
 

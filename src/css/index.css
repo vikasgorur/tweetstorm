@@ -6,3 +6,10 @@ body {
   font-size: 1.2em;
   height: 300px;
 }
+
+.tweet {
+  background-color: white;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
+}
