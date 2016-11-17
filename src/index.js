@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 
+import { split } from './tweet';
+
 import './css/skeleton.css';
 
 Vue.use(Vuex);
@@ -12,7 +14,7 @@ const store = new Vuex.Store({
 
   getters: {
     tweets: state => {
-      return state.text.split(',')
+      return split(state.text)
     }
   },
 
@@ -33,7 +35,7 @@ Vue.component('compose', {
   },
 
   methods: {
-    handleChange: function(event) {
+    handleKeyUp: function(event) {
       this.$store.commit('setText', this.text);
     }
   }
