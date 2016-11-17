@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import Clipboard from 'clipboard';
 
 import { split } from './tweet';
 
@@ -56,3 +57,5 @@ new Vue({
   el: '#root',
   store
 });
+
+new Clipboard('.tweet');

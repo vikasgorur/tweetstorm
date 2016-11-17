@@ -29,7 +29,7 @@
 
         <textarea class="u-full-width" id="text" autofocus="true"
                   :placeholder="text"
-                  v-model="text" v-on:keyup="handleKeyUp" >
+                  v-model="text" @keyup="handleKeyUp" >
         </textarea>
       </form>
     </script>
@@ -39,7 +39,7 @@
         <h3>Tweets</h3>
 
         <div v-for="tweet in tweets">
-          <div class="tweet">
+          <div class="tweet" :data-clipboard-text="tweet" >
             {{ tweet }}
           </div>
         </div>
