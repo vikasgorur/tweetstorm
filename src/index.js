@@ -4,6 +4,7 @@ import Vuex from 'vuex';
 import { split } from './tweet';
 
 import './css/skeleton.css';
+import './css/index.css';
 
 Vue.use(Vuex);
 

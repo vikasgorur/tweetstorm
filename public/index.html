@@ -25,8 +25,14 @@
 
     <script type="x-template" id="compose-template">
       <form>
-        <label for="tweet">Text</label>
-        <textarea class="u-full-width" v-model="text" v-on:keyup="handleKeyUp" >
+        <h3>Text</h3>
+        Type your text here. Use a line containing only '--' to separate tweets.
+
+        <p />
+
+        <textarea class="u-full-width" id="text" autofocus="true"
+                  rows="20"
+                  v-model="text" v-on:keyup="handleKeyUp" >
 
         </textarea>
       </form>
