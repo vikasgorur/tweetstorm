@@ -39,8 +39,9 @@
         <h3>Tweets</h3>
 
         <div v-for="tweet in tweets">
-          <div v-if="tweet" class="tweet">
-            {{ tweet }}
+          <div v-if="tweet.text" class="tweet">
+            <div class="tweet-text">{{ tweet.text }}</div>
+            <div class="tweet-length">{{ tweet.length }}</div>
           </div>
         </div>
       </div>

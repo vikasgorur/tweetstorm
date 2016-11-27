@@ -8,9 +8,16 @@ body {
 }
 
 .tweet {
+  margin-bottom: 40px;
+}
+
+.tweet-text {
   background-color: white;
   border-radius: 10px;
   cursor: pointer;
-  margin-bottom: 20px;
   padding: 5px;
+}
+
+.tweet-length {
+  float: right;
 }
