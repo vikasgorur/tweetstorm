@@ -39,7 +39,7 @@
         <h3>Tweets</h3>
 
         <div v-for="tweet in tweets">
-          <div class="tweet" :data-clipboard-text="tweet" >
+          <div v-if="tweet" class="tweet">
             {{ tweet }}
           </div>
         </div>

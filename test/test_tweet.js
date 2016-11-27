@@ -2,6 +2,9 @@ import { expect } from 'chai';
 
 import twitter from 'twitter-text';
 
+/**
+ * Just some tests to confirm my understanding of tweet lengths.
+ */
 describe('getTweetLength', () => {
   it('it works', () => {
     expect(twitter.getTweetLength('this is a tweet https://google.com/')).to.eql(39);
