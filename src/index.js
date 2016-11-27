@@ -68,4 +68,4 @@ new Vue({
   store
 });
 
-new Clipboard('.tweet');
+new Clipboard('.tweet-text');

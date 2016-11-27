@@ -39,7 +39,7 @@
 
         <div v-for="tweet in tweets">
           <div v-if="tweet.text" class="tweet">
-            <div class="tweet-text">{{ tweet.text }}</div>
+            <div class="tweet-text" :data-clipboard-text=tweet.text > {{ tweet.text }} </div>
             <div v-if="tweet.length > 140" class="tweet-length tweet-length-error">
               {{ tweet.length }}
             </div>
