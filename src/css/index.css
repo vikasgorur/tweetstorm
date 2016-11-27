@@ -21,3 +21,8 @@ body {
 .tweet-length {
   float: right;
 }
+
+.tweet-length-error {
+  color: red;
+  font-weight: bold;
+}
