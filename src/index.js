@@ -9,9 +9,16 @@ import './css/index.css';
 
 Vue.use(Vuex);
 
+const helpText = `This is a simple app for composing tweetstorms.
+--
+You can compose your text here, separating them with '--'.
+--
+You can click on any of the tweets on the right to copy them to the clipboard.
+`;
+
 const store = new Vuex.Store({
   state: {
-    text: ''
+    text: helpText
   },
 
   getters: {
@@ -32,7 +39,7 @@ Vue.component('compose', {
 
   data: function() {
     return {
-      text: this.$store.text
+      text: helpText
     }
   },
 
