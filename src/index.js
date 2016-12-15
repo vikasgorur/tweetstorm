@@ -11,12 +11,10 @@ Vue.use(Vuex);
 
 const helpText = `This is a simple app for composing tweetstorms.
 --
-You can compose your text here, separating them with '--'.
+Write your text here, separating tweets with a line containing only '--'.
 --
-You can click on any of the tweets on the right to copy them to the clipboard.
+Click on any tweet on the right to copy it to the clipboard.
 --
-If a tweet is very long, like this one is, the length tells you that it is very long,
-and that you should do something about it, like maybe making it shorter than it is.
 `;
 
 const store = new Vuex.Store({
@@ -59,6 +57,12 @@ Vue.component('tweets', {
   computed: {
     tweets() {
       return this.$store.getters.tweets;
+    }
+  },
+
+  methods: {
+    handleCopy: function(text) {
+      Clipboard.copy(text);
     }
   }
 });

@@ -12,6 +12,7 @@ body {
   border-radius: 10px;
   margin-bottom: 20px;
   padding: 5px;
+  padding-bottom: 0px;
 }
 
 .tweet-text {
