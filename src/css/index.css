@@ -8,7 +8,10 @@ body {
 }
 
 .tweet {
-  margin-bottom: 40px;
+  background-color: #E8F4F9;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 5px;
 }
 
 .tweet-text {
@@ -19,7 +22,7 @@ body {
 }
 
 .tweet-length {
-  float: right;
+  text-align: right;
 }
 
 .tweet-length-error {
