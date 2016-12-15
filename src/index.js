@@ -19,7 +19,8 @@ Click on any tweet on the right to copy it to the clipboard.
 
 const store = new Vuex.Store({
   state: {
-    text: helpText
+    text: helpText,
+    clipboardText: ''
   },
 
   getters: {
@@ -31,6 +32,10 @@ const store = new Vuex.Store({
   mutations: {
     setText(state, text) {
       state.text = text;
+    },
+
+    setClipboardText(state, text) {
+      state.clipboardText = text;
     }
   }
 });
@@ -62,7 +67,7 @@ Vue.component('tweets', {
 
   methods: {
     handleCopy: function(text) {
-      Clipboard.copy(text);
+      this.$store.commit('setClipboardText', text)
     }
   }
 });
@@ -72,4 +77,12 @@ new Vue({
   store
 });
 
-new Clipboard('.tweet-text');
+const clipboard = new Clipboard('.copy', {
+  text: function() {
+    return store.state.clipboardText;
+  }
+});
+
+clipboard.on('success', (e) => {
+  console.log(e.text);
+})
