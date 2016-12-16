@@ -1,10 +1,12 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import $ from 'jquery';
 import Clipboard from 'clipboard';
 
 import { split } from './tweet';
 
 import './css/skeleton.css';
+import '../node_modules/hint.css/hint.min.css';
 import './css/index.css';
 
 Vue.use(Vuex);
@@ -84,5 +86,11 @@ const clipboard = new Clipboard('.copy', {
 });
 
 clipboard.on('success', (e) => {
-  console.log(e.text);
+  let $e = $(e.trigger);
+
+  $e.addClass('hint--right');
+
+  $e.mouseleave(function (e) {
+    $e.removeClass('hint--right');
+  });
 })

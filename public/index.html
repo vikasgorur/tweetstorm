@@ -39,12 +39,12 @@
 
         <div v-for="tweet in tweets">
           <div v-if="tweet.text" class="tweet">
-            <div class="tweet-text copy" @click="handleCopy(tweet.text)"  > {{ tweet.text }} </div>
+            <div class="tweet-text copy" aria-label="Copied!" @click="handleCopy(tweet.text)"  > {{ tweet.text }} </div>
             <div v-if="tweet.length > 140" class="tweet-length tweet-length-error">
               {{ tweet.length }}
             </div>
             <div v-else class="tweet-length">
-              {{ tweet.length }} &nbsp; <a href="#" class="copy" @click="handleCopy(tweet.text)" >Copy</a>
+              {{ tweet.length }} &nbsp; <a href="#" aria-label="Copied!" class="copy" @click="handleCopy(tweet.text)" >Copy</a>
             </div>
           </div>
         </div>
