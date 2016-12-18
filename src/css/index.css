@@ -1,5 +1,17 @@
+/**
+ * Color palette stolen from: https://www.materialpalette.com/light-blue/deep-purple
+ */
 body {
-  background-color: lightblue;
+  background-color: #2196F3; /* primary color */
+  color: #FFFFFF; /* text color */
+}
+
+.vikas, .vikas:hover {
+  color: #ffffff;
+}
+
+h3 {
+  opacity: 0.8;
 }
 
 #text {
@@ -7,9 +19,14 @@ body {
   height: 380px;
 }
 
+.accent, .accent:hover {
+  color: #7C4DFF; /* accent color */
+}
+
 .tweet {
-  background-color: #E8F4F9;
+  background-color: #BBDEFB; /* light primary color */
   border-radius: 10px;
+  color: #000000;  
   margin-bottom: 20px;
   padding: 5px;
   padding-bottom: 0px;
