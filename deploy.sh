@@ -6,12 +6,21 @@ function build() {
   rm -rf build/* && npm run build
 }
 
+function pack() {
+  cd build && zip -r ../tweetstorm.zip * && cd ..
+}
+
 function deploy() {
-  scp -r build/* $WEBSITE_HOST:vikasgorur.in/tweetstorm
+  scp tweetstorm.zip $WEBSITE_HOST:
+  ssh $WEBSITE_HOST <<EOF
+    unzip -o tweetstorm.zip -d vikasgorur.in/tweetstorm
+    rm tweetstorm.zip
+EOF
 }
 
 function main() {
   build
+  pack
   deploy
 }
 
