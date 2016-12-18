@@ -74,25 +74,23 @@ Vue.component('tweets', {
   }
 });
 
-$(document).ready(() => {
-  new Vue({
-    el: '#root',
-    store
-  });
+new Vue({
+  el: '#root',
+  store
+});
 
-  const clipboard = new Clipboard('.copy', {
-    text: function() {
-      return store.state.clipboardText;
-    }
-  });
+const clipboard = new Clipboard('.copy', {
+  text: function() {
+    return store.state.clipboardText;
+  }
+});
 
-  clipboard.on('success', (e) => {
-    let $e = $(e.trigger);
+clipboard.on('success', (e) => {
+  let $e = $(e.trigger);
 
-    $e.addClass('hint--right');
+  $e.addClass('hint--right');
 
-    $e.mouseleave(function (e) {
-      $e.removeClass('hint--right');
-    });
+  $e.mouseleave(function (e) {
+    $e.removeClass('hint--right');
   });
 });
