@@ -18,10 +18,15 @@ function deploy() {
 EOF
 }
 
+function cleanup() {
+  rm tweetstorm.zip
+}
+
 function main() {
   build
   pack
   deploy
+  cleanup
 }
 
 main $*
