@@ -56,7 +56,10 @@
               {{ tweet.length }}
             </div>
             <div v-else class="tweet-length">
-              {{ tweet.length }} &nbsp; <a href="#" aria-label="Copied!" class="accent copy" @click="handleCopy(tweet.text)" >Copy</a>
+              {{ tweet.length }} &nbsp;
+              <a href="#" aria-label="Copied!" class="accent copy" @click="handleCopy(tweet.text, $event)" >
+                Copy
+              </a>
             </div>
           </div>
         </div>

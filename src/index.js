@@ -68,10 +68,12 @@ Vue.component('tweets', {
   },
 
   methods: {
-    handleCopy: function(text) {
+    handleCopy: function(text, event) {
       // eslint-disable-next-line
       mixpanel.track('Tweet copy');
-      this.$store.commit('setClipboardText', text)
+
+      this.$store.commit('setClipboardText', text);
+      event.preventDefault();
     }
   }
 });
@@ -97,7 +99,10 @@ clipboard.on('success', (e) => {
   });
 });
 
-if (window.location.hostname !== "localhost") {
+if (window.location.hostname === "localhost") {
+  // eslint-disable-next-line
+  mixpanel.track = function() { };
+} else {
   // eslint-disable-next-line
   mixpanel.init("46ae29cc1558b298b56c605c45895fda");
 }
