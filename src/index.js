@@ -69,6 +69,8 @@ Vue.component('tweets', {
 
   methods: {
     handleCopy: function(text) {
+      // eslint-disable-next-line
+      mixpanel.track('Tweet copy');
       this.$store.commit('setClipboardText', text)
     }
   }
@@ -94,3 +96,8 @@ clipboard.on('success', (e) => {
     $e.removeClass('hint--right');
   });
 });
+
+if (window.location.hostname !== "localhost") {
+  // eslint-disable-next-line
+  mixpanel.init("46ae29cc1558b298b56c605c45895fda");
+}
